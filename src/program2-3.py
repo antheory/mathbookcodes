@@ -1,0 +1,12 @@
+# プログラム2-3（入力ウインドウの定義）
+root = tk.Tk()
+root.title("Parameters")
+root.geometry("360x120")
+input_valone_label = tk.Label(text="c/m")
+input_valone_label.grid(row=1, column=1, padx=10)
+input_valone = tk.Entry(width=40)
+input_valone.grid(row=1, column=2)
+input_valtwo_label = tk.Label(text="w0")
+input_valtwo_label.grid(row=2, column=1, padx=10)
+input_valtwo = tk.Entry(width=40)
+input_valtwo.grid(row=2, column=2)
