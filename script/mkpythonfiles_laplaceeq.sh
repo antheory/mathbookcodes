@@ -27,7 +27,7 @@ cat <<EOF > programsubtitle-fem.txt
 #  (3) 有限要素法（FEM）
 EOF
 cat <<EOF > programsubtitle-bem.txt
-#  (4) 境界要素法（FDM）
+#  (4) 境界要素法（BEM）
 EOF
 
 # 準備
