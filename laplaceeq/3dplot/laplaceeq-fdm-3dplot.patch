@@ -1,0 +1,27 @@
+--- ../laplaceeq-fdm.py	2026-10-03 20:29:25.941887274 +0900
++++ laplaceeq-fdm-3dplot.py	2026-10-03 20:31:25.259747408 +0900
+@@ -111,3 +111,24 @@
+             ip = (nx + 1) * iy + ix
+             print(x, y, u[ip], file=fall)
+         print (file=fall)
++# 3Dplot
++xpts = np.linspace(x0, x0 + nx * dx, num=nx + 1, endpoint=True)
++ypts = np.linspace(y0, y0 + ny * dy, num=ny + 1, endpoint=True)
++xgrid, ygrid = np.meshgrid(xpts, ypts)
++ugrid = u.reshape(ny + 1, nx + 1)
++with open("ffdmallgrid.txt", "w") as fall:
++    for iy in range(0, ny + 1):
++        for ix in range(0, nx + 1):
++            print(xgrid[iy][ix], ygrid[iy][ix], ugrid[iy][ix], file=fall)
++        print (file=fall)
++import matplotlib.pyplot as plt#
++fig = plt.figure()
++ax = fig.add_subplot(projection="3d")
++ax.set_proj_type("ortho") # ax.set_proj_type("persp", focal_length=1.0) #
++surface = ax.plot_surface(xgrid, ygrid, ugrid, cmap="viridis")
++ax.set_xlabel("x")
++ax.set_ylabel("y")
++ax.set_zlabel("u")
++ax.set_title("FDM solution")
++fig.colorbar(surface, ax=ax, shrink=0.6, pad=0.1, label="u")
++plt.show()
