@@ -33,6 +33,7 @@
   * `numpy` （数値計算用）
   * `matplotlib` （グラフ描画・シミュレーション可視化用）
   * `scipy` （科学技術計算用）
+  * `tcl` `tk` `tkinter`（tcl/tk入力用）
 
 ### 実行手順
 リポジトリをクローンまたはダウンロードし、必要なライブラリをインストールして実行してください。
@@ -43,7 +44,7 @@ git clone https://github.com
 cd mathcodes
 
 # 必要なライブラリのインストール
-pip install numpy matplotlib scipy
+pip install numpy matplotlib scipy tcl tk tkinter
 
 # サンプルコードの実行（例: 第6章のスクリプト）
 python laplaceeq/laplaceeq_FDM.py
