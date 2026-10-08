@@ -49,6 +49,8 @@ pip install numpy matplotlib scipy tcl tk tkinter
 # サンプルコードの実行（例: 第6章のスクリプト）
 python laplaceeq/laplaceeq_FDM.py
 ```
+※ Jupyter Notebook上で実行する場合は、セル内で以下のように実行することも可能です。
+%run laplaceeq/laplaceeq_FDM.py
 
 ## 免責事項 / Disclaimer
 * 本リポジトリで提供しているソースコードやデータ（以下、「本コンテンツ」）は、学習および研究の補助を目的として提供されています。
