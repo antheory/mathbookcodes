@@ -44,11 +44,12 @@ git clone https://github.com/antheory/mathbookcodes
 cd mathbookcodes
 
 # 必要なライブラリのインストール
-pip install numpy matplotlib scipy tcl tk tkinter
+pip install numpy matplotlib scipy
 
 # サンプルコードの実行（例: 第6章のスクリプト）
 python laplaceeq/laplaceeq_FDM.py
 ```
+※ 減衰振り子のサンプルには Tkinter（Tcl/Tk）が必要です。Python のインストール方法によっては別途導入してください。
 ※ Jupyter Notebook上で実行する場合は、セル内で以下のように実行することも可能です。
 %run laplaceeq/laplaceeq-fdm.py
 
