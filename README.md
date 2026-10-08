@@ -40,8 +40,8 @@
 
 ```bash
 # リポジトリのクローン
-git clone https://github.com
-cd mathcodes
+git clone https://github.com/antheory/mathbookcodes
+cd mathbookcodes
 
 # 必要なライブラリのインストール
 pip install numpy matplotlib scipy tcl tk tkinter
