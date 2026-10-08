@@ -50,6 +50,7 @@ pip install numpy matplotlib scipy
 python laplaceeq/laplaceeq_FDM.py
 ```
 ※ 減衰振り子のサンプルには Tkinter（Tcl/Tk）が必要です。Python のインストール方法によっては別途導入してください。
+
 ※ Jupyter Notebook上で実行する場合は、セル内で以下のように実行することも可能です。
 %run laplaceeq/laplaceeq-fdm.py
 
