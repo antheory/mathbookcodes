@@ -10,7 +10,8 @@
 * **出版社**: コロナ社
 * **発行年**: 2026年
 * **書籍詳細（出版社URL）**: [`https://coronasha.co.jp/np/isbn/9784339061376/`](https://www.coronasha.co.jp/np/isbn/9784339061376/)
-
+* **著者によるサポートページ**：[`https://www-md-mech.eng.osaka-u.ac.jp/~nakatani/Lectures/Math_Model_Analysis/`](https://www-md-mech.eng.osaka-u.ac.jp/~nakatani/Lectures/Math_Model_Analysis/)
+  
 ## 要約
 
 以下に各フォルダーの説明を記します．
