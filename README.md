@@ -26,34 +26,89 @@
 
 ## 動作環境と実行方法 / Requirements & Usage
 
-本書のサンプルコードを実行するには、Python環境および以下の外部ライブラリが必要です。
-
 ### 必要環境
-* **Python**: 3.10 以上（推奨）
-* **主要ライブラリ**:
-  * `numpy` （数値計算用）
-  * `matplotlib` （グラフ描画・シミュレーション可視化用）
-  * `scipy` （科学技術計算用）
-  * `tcl` `tk` `tkinter`（tcl/tk入力用）
 
-### 実行手順
-リポジトリをクローンまたはダウンロードし、必要なライブラリをインストールして実行してください。
+* **Python**: 3.10 以上（推奨）
+* **外部ライブラリ**（使用するサンプルに応じて必要）:
+  * `numpy`（数値計算用）
+  * `matplotlib`（グラフ描画・シミュレーション可視化用）
+  * `scipy`（科学技術計算用）
+* **GUIを使用するサンプルの追加要件**:
+  * Tkinter（Pythonの `tkinter` モジュール）および、その動作に必要な Tcl/Tk
+  * 減衰振り子のサンプルなどで使用します。導入方法と確認方法は下記を参照してください。
+
+### ライブラリのインストールと通常実行
+
+リポジトリをクローンまたはダウンロードし、リポジトリの
+ルートディレクトリ（`README.md` があるフォルダー）で実行してください。
 
 ```bash
 # リポジトリのクローン
 git clone https://github.com/antheory/mathbookcodes
 cd mathbookcodes
 
-# 必要なライブラリのインストール
-pip install numpy matplotlib scipy
+# 使用するPython環境に外部ライブラリをインストール
+python -m pip install numpy matplotlib scipy
 
-# サンプルコードの実行（例: 第6章のスクリプト）
-python laplaceeq/laplaceeq_FDM.py
+# ラプラス方程式の差分法（FDM）の実行
+python laplaceeq/laplaceeq-fdm.py
 ```
-※ 減衰振り子のサンプルには Tkinter（Tcl/Tk）が必要です。Python のインストール方法によっては別途導入してください。
 
-※ Jupyter Notebook上で実行する場合は、セル内で以下のように実行することも可能です。
+以下の説明では、Python 3を起動するコマンドを `python` と表記します。
+環境に応じて `python3` などに読み替え、インストールと実行には同じPython環境を使用してください。
+
+`laplaceeq/` にある各手法のファイル名は次のとおりです。
+
+| 手法 | ファイル |
+| --- | --- |
+| 差分法（FDM） | `laplaceeq/laplaceeq-fdm.py` |
+| 境界要素法（BEM） | `laplaceeq/laplaceeq-bem.py` |
+| 有限要素法（FEM） | `laplaceeq/laplaceeq-fem.py` |
+| モンテカルロ法（MC） | `laplaceeq/laplaceeq-mc.py` |
+
+ほかの手法を実行する場合は、実行コマンドのファイル名を上表に従って変更してください。
+ファイル名のハイフンと英字の大文字・小文字に注意してください。
+
+### Jupyter Notebookでの実行
+
+Jupyter Notebookを使用する場合は、必要なライブラリを導入したPython環境を
+カーネルとして選択してください。Jupyter自体は別途用意する必要があります。
+
+Notebookの作業ディレクトリをリポジトリのルートディレクトリにして、
+セル内で次のように実行します。
+
+```python
 %run laplaceeq/laplaceeq-fdm.py
+```
+
+`%run` はIPython/Jupyterのマジックコマンドです。
+ターミナルで実行する場合は、前節の `python` コマンドを使用してください。
+
+### Tkinter（Tcl/Tk）の確認と導入
+
+TkinterはTcl/Tkを利用するPythonの標準GUIインターフェースですが、
+Pythonの配布形態やOSによっては含まれておらず、別途導入が必要です。
+上記の `python -m pip install numpy matplotlib scipy` では、
+TkinterやTcl/Tkは導入されません。
+
+GUIを使用するサンプルを実行する前に、同じPython環境で次を実行してください。
+
+```bash
+python -m tkinter
+```
+
+確認用のウィンドウが開けば、TkinterとTcl/Tkが利用できます。
+`tkinter` または `_tkinter` が見つからない場合は、使用しているPythonの
+配布元やOSの案内に従って、Tkinter対応のパッケージやコンポーネントを導入してください。
+`pip install tkinter` で導入するものではありません。
+
+また、GUIの表示にはデスクトップなどの画面表示環境が必要です。
+リモートサーバーや画面表示のない環境では、Tkinterが導入済みでも
+ウィンドウを開けない場合があります。Jupyterから実行する場合も、
+カーネルが動作する環境でこれらの条件を満たす必要があります。
+
+詳細は [Python公式ドキュメント：tkinter](https://docs.python.org/ja/3/library/tkinter.html)
+を参照してください。
 
 ## 免責事項 / Disclaimer
 * 本リポジトリで提供しているソースコードやデータ（以下、「本コンテンツ」）は、学習および研究の補助を目的として提供されています。
